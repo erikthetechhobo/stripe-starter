@@ -1,6 +1,7 @@
 import React from "react"
 
 import DonateButton from "../components/DonateButton"
+import SubButton from "../components/SubButton";
 
 export default function Home() {
   return(
@@ -9,6 +10,7 @@ export default function Home() {
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <DonateButton />
+      <SubButton/>
     </div>
   );
 }

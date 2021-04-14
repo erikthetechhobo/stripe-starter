@@ -21,15 +21,15 @@ const getStripe = () => {
   }
   return stripePromise
 }
-const DonateButton = () => {
+const SubButton = () => {
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
     setLoading(true)
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
-      mode: "payment",
-      lineItems: [{ price: "price_1IgEPyGvnCt7xl2SnM8Mrj0r", quantity: 1 }],
+      mode: "subscription",
+      lineItems: [{ price: "price_1IgEaoGvnCt7xl2SGCwkJGfI", quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -46,8 +46,8 @@ const DonateButton = () => {
       }
       onClick={redirectToCheckout}
     >
-      $5 unlimted stock
+      $5 subscription
     </button>
   )
 }
-export default DonateButton
+export default SubButton
