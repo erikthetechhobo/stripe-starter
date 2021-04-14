@@ -1,6 +1,6 @@
 import React from "react"
 
-import SingleProduct from "../components/singleproduct"
+import DonateButton from "../components/DonateButton"
 
 export default function Home() {
   return(
@@ -8,7 +8,7 @@ export default function Home() {
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
-      <SingleProduct />
+      <DonateButton />
     </div>
   );
 }

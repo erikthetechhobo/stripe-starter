@@ -21,7 +21,7 @@ const getStripe = () => {
   }
   return stripePromise
 }
-const SingleProduct = () => {
+const DonateButton = () => {
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -50,4 +50,4 @@ const SingleProduct = () => {
     </button>
   )
 }
-export default SingleProduct
+export default DonateButton
