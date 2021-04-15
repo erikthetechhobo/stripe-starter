@@ -2,6 +2,7 @@ import React from "react"
 
 import DonateButton from "../components/DonateButton"
 import SubButton from "../components/SubButton";
+import SkuButton from "../components/SkuButton";
 
 export default function Home() {
   return(
@@ -11,6 +12,7 @@ export default function Home() {
       <p>Now go build something great.</p>
       <DonateButton />
       <SubButton/>
+      <SkuButton/>
     </div>
   );
 }
