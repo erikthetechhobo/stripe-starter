@@ -5,7 +5,7 @@ require("dotenv").config({
 })
 
 const stripe = require('stripe')(`${process.env.STRIPE_SECRET_KEY}`);
-const testNumber = 1;
+const test = 1;
 async function CreateProducts(){
     let productMaker;
     let priceMaker;
@@ -19,7 +19,6 @@ async function CreateProducts(){
                 "https://files.stripe.com/links/MDB8YWNjdF8xSWZENjZHdm5DdDd4bDJTfGZsX3Rlc3RfMXZVdnVkOGxEak1PeG41SHp3ZlVPR2d300FnHAQ7iH"
             ],
         });
-        
         if(productMaker) {
             priceMaker = await stripe.prices.create({
                 product: 'testID'+test,
@@ -39,17 +38,61 @@ async function CreateProducts(){
     }catch(err) {
         console.log('!product already exists!');
     }
+}
 
+async function UnlimitedProduct(){
+    let productMaker;
+    let priceMaker;
+    try {
+        productMaker = await stripe.products.create({
+            name: 'unlimted item',
+            id: 'nostock',
+            images: [
+                "https://files.stripe.com/links/MDB8YWNjdF8xSWZENjZHdm5DdDd4bDJTfGZsX3Rlc3RfMXZVdnVkOGxEak1PeG41SHp3ZlVPR2d300FnHAQ7iH"
+            ],
+        });
+        
+        if(productMaker) {
+            priceMaker = await stripe.prices.create({
+                product: 'nostock',
+                unit_amount: 500,
+                currency: 'usd'
+            });
+        }
+    }catch(err) {
+        console.log('!product already exists!');
+    }
+}
+
+async function CreateSubscription(){
+    let productMaker;
+    let priceMaker;
+    try {
+        productMaker = await stripe.products.create({
+            name: '$5 dollar subscription',
+            id: '5sub',
+            type: 'service',
+            images: [
+                "https://files.stripe.com/links/MDB8YWNjdF8xSWZENjZHdm5DdDd4bDJTfGZsX3Rlc3RfMXZVdnVkOGxEak1PeG41SHp3ZlVPR2d300FnHAQ7iH"
+            ],
+        });
+        
+        if(productMaker) {
+            priceMaker = await stripe.prices.create({
+                product: '5sub',
+                unit_amount: 500,
+                currency: 'usd',
+                recurring : {
+                    interval: 'month',
+                    interval_count: 1
+                },
+            });
+        }
+    }catch(err) {
+        console.log('!sub fail!', err);
+    }
 }
 
 CreateProducts();
-
-{/*
-
-
-
-stripe.products.create({
-    name: 'test2',
-    id: 'testID'
-});
-*/}
+UnlimitedProduct();
+CreateSubscription();

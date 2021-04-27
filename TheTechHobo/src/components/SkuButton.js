@@ -29,7 +29,7 @@ const SkuButton = () => {
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "price_1IgEIFGvnCt7xl2SfBQZJW9E", quantity: 1 }],
+      lineItems: [{ price: "price_1Iky2jGvnCt7xl2Sctu7zce6", quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -48,7 +48,7 @@ const SkuButton = () => {
     >
       Sku Item
       <div>
-          <small>*Stripe doesn't support purchase by SKU with finite stock yet 4/14/21, this is a price object atached to a sku'd item. No inStock interaction</small>
+          <small>*Stripe doesn't support purchase by SKU with finite stock clientside yet 4/14/21, this is a price object atached to a sku'd item. No inStock interaction</small>
       </div>
     </button>
     

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-stripe-clientside-checkout",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "creates stripe starter with just the api keys and enabling 'clientside-checkout' on stripe dashboard. $5 unlimited stock item, $5 monthly subscription, and $5 sku'd item for inventory(inventory managed items not yet supported on clientside-checkout, no eta 'Sku's with finite inventory are not supported today' Stripes words. For now it functions like $5 unlimited items).",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {

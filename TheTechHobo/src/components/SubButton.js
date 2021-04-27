@@ -29,7 +29,7 @@ const SubButton = () => {
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "subscription",
-      lineItems: [{ price: "price_1IgEaoGvnCt7xl2SGCwkJGfI", quantity: 1 }],
+      lineItems: [{ price: "price_1Iky7AGvnCt7xl2S2iwLieWV", quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })

@@ -29,7 +29,7 @@ const DonateButton = () => {
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "price_1IgEPyGvnCt7xl2SnM8Mrj0r", quantity: 1 }],
+      lineItems: [{ price: "price_1Iky2jGvnCt7xl2SGzTxIm01", quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
