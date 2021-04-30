@@ -1,6 +1,6 @@
 import React from "react"
 
-import DonateButton from "../components/DonateButton"
+import DonateButton from "../components/ItemButton"
 import SubButton from "../components/SubButton";
 import SkuButton from "../components/SkuButton";
 

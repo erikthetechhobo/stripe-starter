@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { loadStripe } from "@stripe/stripe-js"
+import GetStripe from "../utils/stripejs"
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -14,22 +14,15 @@ const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
-let stripePromise
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe("pk_test_51IfD66GvnCt7xl2SiaEDoLISt1GUpCzIfp9jR87BiNrZ5AsBF9JmaWAjqltawCqVXjRcvGZDCf2QVba1Fq9fnW1m00ehhe4NZq")
-  }
-  return stripePromise
-}
 const SubButton = () => {
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
     setLoading(true)
-    const stripe = await getStripe()
+    const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "subscription",
-      lineItems: [{ price: "price_1Iky7AGvnCt7xl2S2iwLieWV", quantity: 1 }],
+      lineItems: [{ price: "price_1IlJcmGvnCt7xl2SKha9chX2", quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -51,3 +44,13 @@ const SubButton = () => {
   )
 }
 export default SubButton
+
+/*
+
+query MyQuery {
+  stripePrice(product: {id: {eq: "5sub"}}) {
+    id
+  }
+}
+
+ */
