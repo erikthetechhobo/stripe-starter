@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-stripe-clientside-checkout",
+  "private": true,
+  "description": "creates stripe starter with just the api keys and enabling 'clientside-checkout' on stripe dashboard. $5 unlimited stock item, $5 monthly subscription, and $5 sku'd item for inventory(inventory managed items not yet supported on clientside-checkout, no eta 'Sku's with finite inventory are not supported today' Stripes words. For now it functions like $5 unlimited items).",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "^1.13.2",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-source-stripe": "^3.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
