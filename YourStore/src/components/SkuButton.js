@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
+
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -32,29 +33,23 @@ const SkuButton = () => {
     }
   }
   return (
-    <button
-      disabled={loading}
-      style={
-        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-      }
-      onClick={redirectToCheckout}
-    >
-      Sku Item
-      <div>
-          <small>*Stripe doesn't support purchase by SKU with finite stock clientside yet 4/14/21, this is a price object atached to a sku'd item. No inStock interaction</small>
-      </div>
-    </button>
-    
+    <div>
+      <button
+        disabled={loading}
+        style={
+          loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
+        }
+        onClick={redirectToCheckout}
+      >
+        $5 sku Item
+        <div>
+            
+        </div>
+      </button>
+      <p>
+      *Stripe doesn't support purchase by SKU with finite stock clientside yet 5/11/21, this is a price object atached to a sku'd item. Acting the same as $5 unlimted
+      </p>
+    </div>
   )
 }
 export default SkuButton
-
-/*
-  
-query MyQuery {
-  stripePrice(product: {id: {eq: "testID"}}) {
-    id
-  }
-}
-  
- */

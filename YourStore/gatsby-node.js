@@ -91,7 +91,10 @@ async function CreateSubscription(){
         console.log('!sub fail!\n', err);
     }
 }
+try {
+    CreateProducts();
+    UnlimitedProduct();
+    CreateSubscription();
+}catch{
 
-CreateProducts();
-UnlimitedProduct();
-CreateSubscription();
+}

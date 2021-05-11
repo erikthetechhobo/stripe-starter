@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
+
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -14,7 +15,7 @@ const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
-const ItemButton = () => {
+const ItemButton = ({data}) => {
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -32,25 +33,17 @@ const ItemButton = () => {
     }
   }
   return (
-    <button
-      disabled={loading}
-      style={
-        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-      }
-      onClick={redirectToCheckout}
-    >
-      $5 unlimted stock
-    </button>
+    <div>
+      <button
+        disabled={loading}
+        style={
+          loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
+        }
+        onClick={redirectToCheckout}
+      >
+        $5 unlimted stock
+      </button>
+    </div>
   )
 }
 export default ItemButton
-
-/*
-
-query MyQuery {
-  stripePrice(product: {id: {eq: "nostock"}}) {
-    id
-  }
-}
-
- */

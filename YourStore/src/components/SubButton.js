@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
+
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -32,25 +33,17 @@ const SubButton = () => {
     }
   }
   return (
-    <button
-      disabled={loading}
-      style={
-        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-      }
-      onClick={redirectToCheckout}
-    >
-      $5 subscription
-    </button>
+    <div>
+      <button
+        disabled={loading}
+        style={
+          loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
+        }
+        onClick={redirectToCheckout}
+      >
+        $5 subscription
+      </button>
+    </div>
   )
 }
 export default SubButton
-
-/*
-
-query MyQuery {
-  stripePrice(product: {id: {eq: "5sub"}}) {
-    id
-  }
-}
-
- */
