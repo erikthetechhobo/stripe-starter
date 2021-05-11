@@ -1,2 +1,2 @@
 # stripe-starter
-stripe store boiler
+stripe client side checkout store boiler
