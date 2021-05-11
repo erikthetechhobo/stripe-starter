@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
 
+const priceID = "price_1IlJdhGvnCt7xl2S7X6MCR4V"
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -23,7 +24,7 @@ const SkuButton = () => {
     const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "price_1IlJdhGvnCt7xl2S7X6MCR4V", quantity: 1 }],
+      lineItems: [{ price: priceID, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })

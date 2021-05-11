@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
 
+const priceID = "price_1IlJcmGvnCt7xl2SA0gpfotP";
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -15,7 +16,7 @@ const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
-const ItemButton = ({data}) => {
+const ItemButton = () => {
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -23,7 +24,7 @@ const ItemButton = ({data}) => {
     const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "price_1IlJcmGvnCt7xl2SA0gpfotP", quantity: 1 }],
+      lineItems: [{ price: priceID, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -33,17 +34,15 @@ const ItemButton = ({data}) => {
     }
   }
   return (
-    <div>
-      <button
-        disabled={loading}
-        style={
-          loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-        }
-        onClick={redirectToCheckout}
-      >
-        $5 unlimted stock
-      </button>
-    </div>
+    <button
+      disabled={loading}
+      style={
+        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
+      }
+      onClick={redirectToCheckout}
+    >
+      $5 unlimted stock
+    </button>
   )
 }
 export default ItemButton

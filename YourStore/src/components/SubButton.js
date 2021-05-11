@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
 
+const priceID = "price_1IlJcmGvnCt7xl2SKha9chX2"
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -23,7 +24,7 @@ const SubButton = () => {
     const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "subscription",
-      lineItems: [{ price: "price_1IlJcmGvnCt7xl2SKha9chX2", quantity: 1 }],
+      lineItems: [{ price: priceID, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })

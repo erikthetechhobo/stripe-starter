@@ -1,5 +1,3 @@
-// Set your secret key. Remember to switch to your live secret key in production.
-// See your keys here: https://dashboard.stripe.com/apikeys
 require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
 })
@@ -91,10 +89,7 @@ async function CreateSubscription(){
         console.log('!sub fail!\n', err);
     }
 }
-try {
-    CreateProducts();
-    UnlimitedProduct();
-    CreateSubscription();
-}catch{
 
-}
+CreateProducts();
+UnlimitedProduct();
+CreateSubscription();
