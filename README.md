@@ -29,9 +29,9 @@
 
     In '/YourStore' create a file named .env.development and add these variables
         
-        STRIPE_SECRET_KEY=
         STRIPE_PUBLISHABLE_KEY=
-
+        STRIPE_SECRET_KEY=
+        
     Set them equal to the keys given to you by Stripe, they should start with "pk_test" for publishable key and "sk_test" for secret key. If they don't you are in live mode and not test mode.
 
 1.  **Run Project**
