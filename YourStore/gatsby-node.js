@@ -42,7 +42,7 @@ async function UnlimitedProduct(){
     let priceMaker;
     try {
         productMaker = await stripe.products.create({
-            name: 'unlimted item',
+            name: 'unlimited item',
             id: 'nostock',
             images: [
                 "https://files.stripe.com/links/MDB8YWNjdF8xSWZENjZHdm5DdDd4bDJTfGZsX3Rlc3RfMXZVdnVkOGxEak1PeG41SHp3ZlVPR2d300FnHAQ7iH"

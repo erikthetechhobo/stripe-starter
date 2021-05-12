@@ -1,7 +1,7 @@
+import { graphql, useStaticQuery } from "gatsby"
 import React, { useState } from "react"
 import GetStripe from "../utils/stripejs"
 
-const priceID = "price_1IlJdhGvnCt7xl2S7X6MCR4V"
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -16,7 +16,14 @@ const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
-const SkuButton = () => {
+export default function SkuButton() {
+  const data = useStaticQuery(graphql`
+    query MySkuQuery {
+      stripePrice(product: {id: {eq: "testID"}}) {
+        id
+      }
+    }
+  `)
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -24,7 +31,7 @@ const SkuButton = () => {
     const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: priceID, quantity: 1 }],
+      lineItems: [{ price: data.stripePrice.id, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -53,4 +60,3 @@ const SkuButton = () => {
     </div>
   )
 }
-export default SkuButton

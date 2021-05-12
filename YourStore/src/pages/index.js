@@ -4,7 +4,7 @@ import ItemButton from "../components/ItemButton"
 import SubButton from "../components/SubButton";
 import SkuButton from "../components/SkuButton";
 
-export default function Home() {
+export default function Home({data}) {
   return(
     <div>
       <h1>Hi people</h1>
@@ -16,3 +16,26 @@ export default function Home() {
     </div>
   );
 }
+
+// here for when I add create a single button component and pass props
+/* 
+  My Queries:
+
+  query MyItemQuery {
+    stripePrice(product: {id: {eq: "nostock"}}) {
+      id
+    }
+  }
+
+  query MySkuQuery {
+    stripePrice(product: {id: {eq: "testID"}}) {
+      id
+    }
+  }
+
+  query MySubQuery {
+    stripePrice(product: {id: {eq: "5sub"}}) {
+      id
+    }
+  }
+ */

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
+import { useStaticQuery, graphql} from 'gatsby';
 import GetStripe from "../utils/stripejs"
 
-const priceID = "price_1IlJcmGvnCt7xl2SA0gpfotP";
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -16,7 +16,14 @@ const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
-const ItemButton = () => {
+export default function ItemButton() {
+  const data = useStaticQuery(graphql`
+    query MyItemQuery {
+      stripePrice(product: {id: {eq: "nostock"}}) {
+        id
+      }
+    }
+  `)
   const [loading, setLoading] = useState(false)
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -24,7 +31,7 @@ const ItemButton = () => {
     const stripe = await GetStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: priceID, quantity: 1 }],
+      lineItems: [{ price: data.stripePrice.id, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     })
@@ -41,8 +48,7 @@ const ItemButton = () => {
       }
       onClick={redirectToCheckout}
     >
-      $5 unlimted stock
+      $5 unlimited stock
     </button>
   )
 }
-export default ItemButton
