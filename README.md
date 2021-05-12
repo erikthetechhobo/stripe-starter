@@ -6,6 +6,12 @@
 
 1.  **Clone/NPM Install**
 
+    ```shell
+      git clone https://github.com/erikthetechhobo/stripe-starter.git
+      cd YourStore
+      npm install
+    ```
+
 1.  **Create a Stripe Account**
 
     [Stripe](https://stripe.com)
@@ -22,9 +28,10 @@
     See your keys here: https://dashboard.stripe.com/apikeys
 
     In '/YourStore' create a file named .env.development and add these variables
-        STRIPE_SECRET_KEY=
+        
         STRIPE_PUBLISHABLE_KEY=
-
+        STRIPE_SECRET_KEY=
+        
     Set them equal to the keys given to you by Stripe, they should start with "pk_test" for publishable key and "sk_test" for secret key. If they don't you are in live mode and not test mode.
 
 1.  **Run Project**
@@ -33,7 +40,7 @@
       gatsby develop
     ```
 
-    The first time you run the project the buttons will not work.  The 'gatsby-node.js' creates 3 different products on your Stripe account and Stripe creates price ids for all of them.
+    The first time you run the project the buttons will not work.  The 'gatsby-node.js' creates 3 different products on your Stripe account and Stripe creates price ids for all of them. I'm in the process of fixing this with page queries.
     
     On the stripe dashboard click "Products" and you'll see the 3 items. 
 
