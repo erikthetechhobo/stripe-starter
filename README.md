@@ -11,7 +11,7 @@
       npm install
     ```
     
-    add .env.development you to your .gitignore file
+    add .env.development to your .gitignore file
 
 1.  **Create a Stripe Account**
 
@@ -49,4 +49,4 @@
 
       $5 sub will do reacurring payments, but if you want to cancell them you'll have to do it through the dashboard. You will need some sort of user authentication to allow customers to do so.
     
-    To test transaction use credit card number 4242 4242 4242 4242 with any legal exp date cvc code.
+    To test transactions use credit card number 4242 4242 4242 4242 with any legal exp date cvc code.
