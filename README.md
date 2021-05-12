@@ -6,6 +6,12 @@
 
 1.  **Clone/NPM Install**
 
+    ```shell
+      git clone https://github.com/erikthetechhobo/stripe-starter.git
+      cd YourStore
+      npm install
+    ```
+
 1.  **Create a Stripe Account**
 
     [Stripe](https://stripe.com)
