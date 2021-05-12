@@ -50,4 +50,3 @@
       $5 sub will do reacurring payments, but if you want to cancell them you'll have to do it through the dashboard. You will need some sort of user authentication to allow customers to do so.
     
     To test transaction use credit card number 4242 4242 4242 4242 with any legal exp date cvc code.
-    A verification email will be sent to the e-mail you provide
