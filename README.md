@@ -40,7 +40,7 @@
       gatsby develop
     ```
 
-    The first time you run the project the buttons will not work.  The 'gatsby-node.js' creates 3 different products on your Stripe account and Stripe creates price ids for all of them.
+    The first time you run the project the buttons will not work.  The 'gatsby-node.js' creates 3 different products on your Stripe account and Stripe creates price ids for all of them. I'm in the process of fixing this with page queries.
     
     On the stripe dashboard click "Products" and you'll see the 3 items. 
 
