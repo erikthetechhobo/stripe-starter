@@ -13,7 +13,7 @@
     Click on settings on the bottom of the left navigation
     Under Product Settings find "Payments > Checkout settings"
     Bottom of the page click "Enable client-only integration"
-        You do not need to enter domain addresses while testing, in live mode you will need an https site.
+        You do not need to enter domain addresses while testing, in live mode you will need a https site.
 
 1.  **API Keys**
 
@@ -43,8 +43,9 @@
 
       $5 sub will do reacurring payments, but if you want to cancell them you'll have to do it through the dashboard. You will need some sort of user authentication to allow customers to do so.
     
-    Click each item and find "pricing > api id". Set priceID in each of the files located at 'YourStore/src/components' with the respective id.
+    Click each item and find "pricing > api id". Set priceID in each of the files located at 'YourStore/src/components' with the respective id. Located on line 4 in each file
 
     Stop project and run it again, your buttons now bring you to the checkout of that Item.
     
     To test transaction use credit card number 4242 4242 4242 4242 with any legal exp date cvc code.
+    A verification email will be sent to the e-mail you provide
