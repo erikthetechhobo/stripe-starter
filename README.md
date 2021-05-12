@@ -28,6 +28,7 @@
     See your keys here: https://dashboard.stripe.com/apikeys
 
     In '/YourStore' create a file named .env.development and add these variables
+        
         STRIPE_SECRET_KEY=
         STRIPE_PUBLISHABLE_KEY=
 
