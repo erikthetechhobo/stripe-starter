@@ -13,9 +13,8 @@
     
     add .env.development to your .gitignore file
 
-1.  **Create a Stripe Account**
+1.  **Create a [Stripe](https://stripe.com) Account**
 
-    [Stripe](https://stripe.com)
     Log in to the dashboard and make sure "Viewing test data" is selected
     Click on settings on the bottom of the left navigation
     Under Product Settings find "Payments > Checkout settings"
