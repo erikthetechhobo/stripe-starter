@@ -62,7 +62,7 @@ async function UnlimitedProduct(){
             });
         }
     }catch(err) {
-        console.log('!product already exists!\n', err);
+        console.log('!product already exists!\n');
     }
 }
 
@@ -91,7 +91,7 @@ async function CreateSubscription(){
             });
         }
     }catch(err) {
-        console.log('!sub fail!\n', err);
+        console.log('!sub fail!\n');
     }
 }
 
